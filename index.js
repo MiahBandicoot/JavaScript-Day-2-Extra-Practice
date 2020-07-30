@@ -6,23 +6,59 @@ const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado
 TASK 1 🚀
 // The customer would like to see the topping options, console log out each of the toppings one by one in the array above 
 */
+toppings.forEach(function(item){
+console.log(item)
+})
 
-
-/*
+// console.log(toppings[0])
+// console.log(toppings[1])
+// console.log(toppings[2])
+// console.log(toppings[3])
+// console.log(toppings[4])
+// console.log(toppings[5])
+// console.log(toppings[6])
+// console.log(toppings[7])
+// console.log(toppings[8])
+// console.log(toppings[9])
+// console.log(toppings[10])
+ /*
 TASK 2 🚀
 // write a function that accepts an array and an item and removes that item from the array
 for example you no longer have any onions and need to remove it from the list of toppings
 Use .forEach() - hint - you will need to include the index in the callback
  */
 
+const newA = []
 
+    toppings.forEach(function(item,gone) {
+        toppings.splice(gone,1,)
+        return newA.push(item)
+    })
+
+// function update(array,gone){
+    
+//         array.splice(gone,1)
+
+    
+//     return array
+//     }
+// console.log(update(toppings,9))
+
+console.log(newA,9)
 
 /*
 TASK 3 🚀
 // Sort the topping alphabetically and return them in a new array 
 */
+let alpha = []
+    toppings.forEach(function(item){
+    (alpha.push(item))
+    alpha.sort()
+})
 
 
+
+ console.log(alpha)
 
 
 const vacations = [
@@ -41,34 +77,59 @@ const vacations = [
 /*
 TASK 4 🚀
 // The travel agent would like to send a couple on their honeymoon to a location with a beach and a temperature above 90 degrees. return their options in a new array 
-*/
+// */
+
+    let honey = vacations.filter(function(item){
+    return (item.beach===true)&&(item.temperature>90)
+    })
 
 
-
+console.log(honey)
 /*
 TASK 5 🚀
 // A developer decides to become a digital nomad for a year, they would like to live in a place with strong wifi, a beach, and good hiking, return their options
 */
-
-
+let nomad = vacations.filter(function(item){
+    return (item.wifi==='strong')&&(item.beach===true)&&(item.hiking===true)
+})
+console.log(nomad)
 
 /* 
 TASK 6 🚀
 // write a function that allows a user to sort their vacations by hiking opportunities, beach access or a mix of both and return their options
 */
-
-
+let weirdo = vacations.filter(function(item){
+    return (item.beach===true)||(item.hiking===true)
+})
+console.log(weirdo)
 
 /* 
 TASK 7 🚀
 // write a function that finds the average of overall ratings in a given array. The function should take an array as its argument and should return the average of the overall ratings in that array 
 hint - use .reduce()
 */
-
-
+let rate = vacations.reduce(function(acc,item){
+ return acc+item.overall_rating
+},0)
+console.log(rate/vacations.length)
 /*
 TASK 8 🚀
 Find the airport codes for each of the cities in the vacation array and write a function to add them to the objects in the array
 hint - your function should include array, index and code as parameters
 you will need to invoke the function each time you wish to add a new code
 */
+function airport(array,index,code){
+array[index].Aircode=code;
+return array[index]
+}
+console.log(airport(vacations,0,'YYZ'))
+console.log(airport(vacations,1,'MIA'))
+console.log(airport(vacations,2,'TLV'))
+console.log(airport(vacations,3,'IST'))
+console.log(airport(vacations,4,'BKK'))
+console.log(airport(vacations,5,'LIM'))
+console.log(airport(vacations,6,'MCT'))
+console.log(airport(vacations,7,'SYD'))
+console.log(airport(vacations,8,'CPT'))
+console.log(airport(vacations,9,'CUN'))
+
